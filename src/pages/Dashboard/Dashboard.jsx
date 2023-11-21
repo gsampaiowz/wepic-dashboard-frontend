@@ -1,7 +1,14 @@
 import Container from "../../components/Container/Container";
 import MainContent from "../../components/MainContent/MainContent";
-import PriceCard from "../../components/PriceCard/PriceCard";
+
+import {
+  CardWrapper,
+  PriceCard,
+} from "../../components/Cards/Cards";
 import { BsBarChartLine } from "react-icons/bs";
+import { IoBagCheckOutline } from "react-icons/io5";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 import "./Dashboard.css";
 
@@ -10,14 +17,27 @@ const Dashboard = () => {
     <MainContent>
       <div className="dashboard">
         <Container>
-          <div className="grid">
-            <PriceCard backgroundIcon={"#D19AE8"} icon={<BsBarChartLine size={22} color="var(--color-white)"/>} value={"R$53.009"}/>
-            <div className="div5"> </div>
-            <div className="div6"> </div>
-            <div className="div7"> </div>
-            <div className="div8"> </div>
-            <div className="div9"> </div>
-            <div className="div10"> </div>
+          <div className="dashboard-flex">
+              <PriceCard
+                iconBackgroundColor={"#D19AE8"}
+                icon={<BsBarChartLine size={22} color="var(--color-white)" />}
+                price={53009}
+              />
+              <PriceCard
+                iconBackgroundColor={"#EA9171"}
+                icon={<IoBagCheckOutline size={22} color="var(--color-white)" />}
+                price={53009}
+              />
+              <PriceCard
+                iconBackgroundColor={"#6EA1E7"}
+                icon={<AiOutlineClockCircle size={22} color="var(--color-white)" />}
+                price={53009}
+              />
+              <PriceCard
+                iconBackgroundColor={"#EFC375"}
+                icon={<AiOutlineUser size={22} color="var(--color-white)" />}
+                price={53009}
+              />
           </div>
         </Container>
       </div>

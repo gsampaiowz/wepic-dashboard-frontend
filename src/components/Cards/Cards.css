@@ -1,0 +1,40 @@
+.card{
+    border-radius: 10px;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.05);
+}
+
+.price-card {
+  display: flex;
+  max-width: 335px;
+  width: 260px;
+  flex-grow: 1;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+}
+
+.price-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-card__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.price-card__total {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+}
+
+.price-card__preco{
+    font-size: 20px
+}
