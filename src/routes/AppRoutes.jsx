@@ -5,11 +5,13 @@ import Equipes from "../pages/Equipes/Equipes";
 import Descontos from "./../pages/Descontos/Descontos";
 import Eventos from "../pages/Eventos/Eventos";
 import Galeria from "../pages/Galeria/Galeria";
+import Navbar from "../components/Navbar/Navbar";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Header />
+      <Navbar />
       <Routes>
         <Route element={<Dashboard />} path="/" />
         <Route element={<Equipes />} path="/equipes" />
