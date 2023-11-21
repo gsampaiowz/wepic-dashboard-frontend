@@ -12,12 +12,12 @@ const Dashboard = () => {
         <Container>
           <div className="grid">
             <PriceCard backgroundIcon={"#D19AE8"} icon={<BsBarChartLine size={22} color="var(--color-white)"/>} value={"R$53.009"}/>
-            <div className="card div5"> </div>
-            <div className="card div6"> </div>
-            <div className="card div7"> </div>
-            <div className="card div8"> </div>
-            <div className="card div9"> </div>
-            <div className="card div10"> </div>
+            <div className="div5"> </div>
+            <div className="div6"> </div>
+            <div className="div7"> </div>
+            <div className="div8"> </div>
+            <div className="div9"> </div>
+            <div className="div10"> </div>
           </div>
         </Container>
       </div>

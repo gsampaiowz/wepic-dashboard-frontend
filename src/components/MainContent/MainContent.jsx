@@ -1,7 +1,7 @@
 import "./MainContent.css";
 
 const MainContent = ({ children }) => {
-  return <main>{children}</main>;
+  return <main className="main-content">{children}</main>;
 };
 
 export default MainContent;
