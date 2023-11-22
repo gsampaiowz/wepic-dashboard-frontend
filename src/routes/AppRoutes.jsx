@@ -6,12 +6,14 @@ import Descontos from "./../pages/Descontos/Descontos";
 import Eventos from "../pages/Eventos/Eventos";
 import Galeria from "../pages/Galeria/Galeria";
 import Navbar from "../components/Navbar/Navbar";
+import { useState } from "react";
 
 const AppRoutes = () => {
+  const [exibeNavbar, setExibeNavbar] = useState(false);
   return (
     <BrowserRouter>
-      <Header />
-      <Navbar />
+      <Header exibeNavbar={exibeNavbar} setExibeNavbar={setExibeNavbar} />
+      <Navbar exibeNavbar={exibeNavbar} setExibeNavbar={setExibeNavbar} />
       <Routes>
         <Route element={<Dashboard />} path="/" />
         <Route element={<Equipes />} path="/equipes" />

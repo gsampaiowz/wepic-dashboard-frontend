@@ -1,23 +1,38 @@
 .navbar {
-  padding: 120px 0 0 30px;
-  max-width: 200px;
-  width: 100%;
-  background-color: var(--color-blue);
   position: absolute;
-  top: 0;
-  bottom: 0;
+  opacity: 0;
+  transition: 1s;
+  top: -100%;
+  width: 100%;
+  padding: 80px 40px;
+  background-color: var(--color-blue);
+}
+
+.navbar__close {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.exibeNavbar {
+  top: 0 !important;
+  opacity: 1 !important;
 }
 
 .navbar-flex {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 30px;
 }
 
 .nav__link {
   padding: 5px 0 5px 10px;
   gap: 10px;
-  border-radius: 16px 0px 0px 16px;
+  border-radius: 16px;
   text-decoration: none;
   color: var(--color-white);
   transition: 1s;
@@ -29,4 +44,27 @@
 .nav__link--onRoute {
   background-color: var(--color-white);
   color: var(--color-blue);
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 120px 0 0 30px;
+    max-width: 200px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    bottom: 0;
+  }
+  .navbar__close {
+    display: none;
+  }
+  .navbar-flex {
+    gap: 15px;
+  }
+  .nav__link {
+    padding: 5px 0 5px 10px;
+    gap: 10px;
+    border-radius: 16px 0px 0px 16px;
+  }
 }

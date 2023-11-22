@@ -4,7 +4,7 @@ import { FaRegBell } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import fotoPerfil from "../../assets/images/foto_perfil.jpg";
 
-const Header = () => {
+const Header = ({ exibeNavbar, setExibeNavbar }) => {
   return (
     <header className="header">
       <div className="header-flex">
@@ -14,7 +14,7 @@ const Header = () => {
           <b>Matheus Richard</b>
           <small>Plano A</small>
         </div>
-        <SlMenu size={25} />
+        <SlMenu className="header__menu__mobile" onClick={() => setExibeNavbar(true)} size={25} />
       </div>
     </header>
   );

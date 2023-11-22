@@ -8,7 +8,7 @@ import { HiOutlinePhotograph } from "react-icons/hi";
 import { GoPaperclip } from "react-icons/go";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({setExibeNavbar, exibeNavbar}) => {
   const [route, setRoute] = useState("");
   const path = window.location.pathname;
 
@@ -21,7 +21,10 @@ const Navbar = () => {
   }, [route]);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${exibeNavbar ? "exibeNavbar" : ""}`}>
+      <span onClick={() => setExibeNavbar(false)} className="navbar__close">
+        x
+      </span>
       <div className="navbar-flex">
         <Link
           to={"/"}
