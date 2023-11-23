@@ -1,0 +1,15 @@
+.statistic{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statistic-color {
+  width: 25px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.statistic-text {
+  font-size: 14px;
+}
