@@ -13,3 +13,16 @@
   width: 100%;
   justify-content: center;
 }
+
+.price-card-pair{
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .price-card-pair{
+    flex-direction: column;
+  }
+}

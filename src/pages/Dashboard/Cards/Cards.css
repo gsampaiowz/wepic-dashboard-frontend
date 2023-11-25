@@ -6,8 +6,6 @@
 
 .price-card {
   display: flex;
-  max-width: 335px;
-  width: 260px;
   flex-grow: 1;
   justify-content: space-around;
   gap: 20px;
@@ -39,16 +37,19 @@
   font-size: 20px;
 }
 
-.pie-chart-card {
+.chart-card {
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
+  align-items: center;
+  flex: 1;
+  min-width: 440px;
 }
 
-.pie-chart-card__texts {
+.chart-card__texts {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
+  justify-content: space-between;
+  height: 100%;
   flex-direction: column;
 }
 
