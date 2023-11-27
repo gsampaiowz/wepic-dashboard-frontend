@@ -1,7 +1,9 @@
-import "./Cards.css";
-import {PieChart, Pie, LineChart, Line,  Cell, Tooltip } from "recharts";
 import CardTitle from "./CardTitle/CardTitle";
-import Statistic from "./Statistic/Statistic";
+import "./Cards.css";
+import { Menu } from "@mui/base/Menu";
+import { MenuItem, menuItemClasses } from "@mui/base/MenuItem";
+import { MenuButton } from "@mui/base/MenuButton";
+import { Dropdown } from "@mui/base/Dropdown";
 
 export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   return (
@@ -25,133 +27,85 @@ export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   );
 };
 
-
-export const PieChartCard = () => {
-  const totalData = 100;
-  
-  const dataPie = [
-    { name: "Group A", value: 45 % totalData },
-    { name: "Group B", value: 30 % totalData },
-    { name: "Group C", value: 25 % totalData },
-  ];
-  
-  const pieColors = ["#470CA6", "#5ACB0D", "#B82257"];
-
-  return (
-    <div className="card chart-card">
-      <div className="chart-card__texts">
-        <CardTitle text="Uploads e downloads" />
-
-        <div className="statistics">
-          <Statistic color="#470CA6" text="Upload" />
-          <Statistic color="#5ACB0D" text="Pagos" />
-          <Statistic color="#B82257" text="Gratuitos" />
-        </div>
-      </div>
-      <PieChart width={100} height={100}>
-        <Pie
-          data={dataPie}
-          cx={"50%"}
-          cy={"50%"}
-          outerRadius={50}
-          dataKey="value"
-        >
-          {dataPie.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={pieColors[index % pieColors.length]} />
-          ))}
-        </Pie>
-        <Tooltip
-          contentStyle={{
-            borderRadius: 10,
-            fontSize: 14,
-            padding: "5px 10px",
-          }}
-        />
-      </PieChart>
-    </div>
-  );
-};
-
-export const LineChartCard = () => {
-  const dataLine = [
-    {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-    {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
-    },
-    {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
-    },
-    {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
-    },
-    {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
-    },
-    {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
-    },
-  ];
-  
-  return (
-    <div className="card chart-card">
-      <div className="chart-card__texts">
-        <CardTitle text="Uploads e downloads" />
-
-        <div className="statistics">
-          <Statistic color="#470CA6" text="Upload" />
-          <Statistic color="#5ACB0D" text="Pagos" />
-          <Statistic color="#B82257" text="Gratuitos" />
-        </div>
-      </div>
-      <LineChart width={300} height={100} data={dataLine}>
-        <Line
-          type="monotone"
-          dataKey="pv"
-          stroke="#2D2BD4"
-          strokeWidth={3}
-          dot={null}
-        />
-        <Line
-          type="monotone"
-          dataKey="uv"
-          stroke="#00BAD3"
-          strokeWidth={3}
-          dot={null}
-        />
-      </LineChart>
-    </div>
-  );
+export const ChartCard = ({ children }) => {
+  return <div className="card chart-card">{children}</div>;
 };
 
 export const TableCard = () => {
-  return(
-    <table>
-    </table>
-  )
+  return (
+    <div className="card">
+      <div className="table-card__header">
+        <CardTitle text="Processo de eventos" />
+        <MenuSimple />
+        <div className="table-card__dropdowns"></div>
+      </div>
+      <table></table>
+    </div>
+  );
+};
+
+export function MenuSimple() {
+  const createHandleMenuClick = (menuItem) => {
+    return () => {
+      console.log(`Clicked on ${menuItem}`);
+    };
+  };
+
+  return (
+    <Dropdown>
+      <MenuButton className="TriggerButtonSimple">My account</MenuButton>
+
+      <Menu
+        className="CustomMenuSimple"
+        slotProps={{
+          listbox: { className: "CustomMenuSimple--listbox" },
+        }}
+      >
+        <MenuItem
+          className="CustomMenuSimple--item"
+          onClick={createHandleMenuClick("Profile")}
+        >
+          Profile
+        </MenuItem>
+        <MenuItem
+          className="CustomMenuSimple--item"
+          onClick={createHandleMenuClick("Language settings")}
+        >
+          Language settings
+        </MenuItem>
+        <MenuItem
+          className="CustomMenuSimple--item"
+          onClick={createHandleMenuClick("Log out")}
+        >
+          Log out
+        </MenuItem>
+      </Menu>
+    </Dropdown>
+  );
 }
+
+const cyan = {
+  50: "#E9F8FC",
+  100: "#BDEBF4",
+  200: "#99D8E5",
+  300: "#66BACC",
+  400: "#1F94AD",
+  500: "#0D5463",
+  600: "#094855",
+  700: "#063C47",
+  800: "#043039",
+  900: "#022127",
+};
+
+const grey = {
+  50: "#F3F6F9",
+  100: "#E5EAF2",
+  200: "#DAE2ED",
+  300: "#C7D0DD",
+  400: "#B0B8C4",
+  500: "#9DA8B7",
+  600: "#6B7A90",
+  700: "#434D5B",
+  800: "#303740",
+  900: "#1C2025",
+};

@@ -21,6 +21,20 @@
   justify-content: space-around;
 }
 
+.chart-card__texts {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+}
+
+.statistics {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 768px) {
   .price-card-pair{
     flex-direction: column;
