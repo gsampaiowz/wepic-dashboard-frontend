@@ -79,9 +79,9 @@ const Dashboard = () => {
                 <MyLineChart />
               </ChartCard>
             </div>
-          </div>
-          <div className="dashboard-row">
-            <TableCard />
+            <div className="dashboard-row">
+              <TableCard />
+            </div>
           </div>
         </Container>
       </div>

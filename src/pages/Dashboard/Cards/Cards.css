@@ -45,6 +45,18 @@
   min-width: 440px;
 }
 
+.table-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (max-width: 480px) {
   .chart-card {
     min-width: auto;
