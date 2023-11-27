@@ -20,5 +20,6 @@ body {
   --color-blue: #00BAD3;
   --color-orange: #FF451D;
   --color-black: #000;
+  --color-gray: rgba(0, 0, 0, 0.05);
 
 }

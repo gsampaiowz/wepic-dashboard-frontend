@@ -1,0 +1,13 @@
+.table__header {
+}
+
+.table__line__header {
+}
+
+.table__cell__header{
+    background: none;
+}
+
+.table__body__cell{
+    border: none !important;
+}
