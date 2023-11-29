@@ -44,12 +44,37 @@ export const lineChartDatas = [
 ];
 
 export const pieChartDatas = {
+  dataPie: [
+    { name: "Group A", value: 45 % 100 },
+    { name: "Group B", value: 30 % 100 },
+    { name: "Group C", value: 25 % 100 },
+  ],
 
-    dataPie : [
-      { name: "Group A", value: 45 % 100 },
-      { name: "Group B", value: 30 % 100 },
-      { name: "Group C", value: 25 % 100 },
-    ],
-    
-    pieColors : ["#470CA6", "#5ACB0D", "#B82257"],
-}
+  pieColors: ["#470CA6", "#5ACB0D", "#B82257"],
+};
+
+export const dropdownDatas = {
+  events: ["Evento 1", "Evento 2", "Evento 3"],
+
+  fotografos: ["Fotógrafo 1", "Fotógrafo 2", "Fotógrafo 3"],
+
+  status: ["Status 1", "Status 2", "Status 3"],
+};
+
+export const dataCircularChart = [
+  {
+    name: "Vendas",
+    value: 26,
+    color: "#209332",
+  },
+  {
+    name: "Carrinho",
+    value: 35,
+    color: "#dfa503",
+  },
+  {
+    name: "Desistência",
+    value: 35,
+    color: "#ff451d",
+  },
+];

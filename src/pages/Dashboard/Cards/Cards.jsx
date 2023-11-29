@@ -1,7 +1,10 @@
 import CardTitle from "./CardTitle/CardTitle";
-import "./Cards.css";
 import MyDropdown from "./Dropdown/Dropdown";
 import MyTable from "./Table/Table";
+import { Cell, Pie, PieChart } from "recharts";
+import { dataCircularChart, dropdownDatas } from "./Datas";
+import "./Cards.css";
+import ActivitiesList from './ActivitiesList/ActivitiesList';
 
 export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   return (
@@ -35,22 +38,67 @@ export const TableCard = () => {
       <div className="card__header">
         <CardTitle text="Processo de eventos" />
         <div className="table-card__dropdowns">
-          <MyDropdown />
-          <MyDropdown />
-          <MyDropdown />
+          <MyDropdown array={dropdownDatas.events} titulo={"Eventos"} />
+          <MyDropdown array={dropdownDatas.fotografos} titulo={"Fotógrafos"} />
+          <MyDropdown array={dropdownDatas.status} titulo={"Status"} />
         </div>
       </div>
-      <MyTable/>
+      <MyTable />
     </div>
   );
 };
 
 export const CircularChartCard = () => {
+  let totalData = 0;
+  dataCircularChart.forEach((item) => {
+    totalData += item.value;
+  });
+
   return (
     <div className="card circular-chart-card">
-      <div className="card__header">
-        <CardTitle text="Objetivos" />
-      </div>    
+      <CardTitle text="Objetivos" />
+      <div className="circular-chart-card-flex">
+        <PieChart style={{ alignSelf: "center" }} width={300} height={250}>
+          <Pie
+            data={dataCircularChart}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            innerRadius={60}
+            outerRadius={80}
+            fill="#82ca9d"
+            label
+          >
+            {dataCircularChart.map((item) => (
+              <Cell key={`cell-${item.name}`} fill={item.color} />
+            ))}
+          </Pie>
+        </PieChart>
+        <div className="circular-chart-card-dados">
+          <div className="circular-chart-card-dado">
+            <span className="circular-chart-card-dado__value">{totalData}</span>
+            <span className="circular-chart-card-dado__title">Eventos</span>
+          </div>
+          {dataCircularChart.map((item) => (
+            <div key={item.name} className="circular-chart-card-dado">
+              <span style={{color: item.color}} className="circular-chart-card-dado__value">
+                {item.value}
+              </span>
+              <span className="circular-chart-card-dado__title">{item.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const ActivitiesListCard = () => {
+  return (
+    <div className="card activities-list-card">
+      <CardTitle text="Atividades diárias" />
+      <ActivitiesList />
     </div>
   );
 }

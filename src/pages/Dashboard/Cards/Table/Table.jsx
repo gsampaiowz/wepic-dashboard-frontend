@@ -1,9 +1,10 @@
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { TableContainer, Paper } from "@mui/material";
+import CircularProgressWithLabel from "./CircularProgressWithLabel/CircularProgressWithLabel";
 import { v4 as uuidv4 } from "uuid";
 uuidv4();
 
@@ -30,53 +31,47 @@ const columns = [
   },
 ];
 
-function createData(
-  nome,
-  fotografo,
-  data,
-  status,
-  progresso,
-  key = uuidv4()
-  ) {
-    return {
-      nome,
-      fotografo,
-      data,
-      status:
+function createData(nome, fotografo, data, status, progresso, key = uuidv4()) {
+  return {
+    nome,
+    fotografo,
+    data,
+    status:
       status === 1
-      ? "Completo"
-      : status === 2
-      ? "Em andamento"
-      : status === 3
-      ? "Upload de Imagens"
-      : status === 4
-      ? "Cancelado"
-      : null,
-      progresso,
-      key,
-    };
-  }
-  
-  const rows = [
-    createData("Nome", "Nome", "Data", 1, 100),
-    createData("Nome", "Nome", "Data", 1, 100),
-    createData("Nome", "Nome", "Data", 1, 100),
-    createData("Nome", "Nome", "Data", 1, 100),
-    createData("Nome", "Nome", "Data", 1, 100),
-  ];
-  
-  const MyTable = () => {
-    return (
-      <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="sticky table">
+        ? "Completo"
+        : status === 2
+        ? "Em andamento"
+        : status === 3
+        ? "Upload de Imagens"
+        : status === 4
+        ? "Cancelado"
+        : null,
+    progresso,
+    key,
+  };
+}
+
+const rows = [
+  createData("Nome", "Nome", "Data", 1, 100),
+  createData("Nome", "Nome", "Data", 2, 100),
+  createData("Nome", "Nome", "Data", 4, 100),
+  createData("Nome", "Nome", "Data", 1, 100),
+  createData("Nome", "Nome", "Data", 3, 100),
+];
+
+const MyTable = () => {
+  return (
+    <Paper sx={{ boxShadow: "none", width: "100%", overflow: "hidden" }}>
+      <TableContainer sx={{ maxHeight: 200 }}>
+        <Table className="table" stickyHeader>
           <TableHead className="table__header">
             <TableRow className="table__line__header">
               {columns.map((column) => (
                 <TableCell
-                className="table__cell__header"
-                key={column.id}
-                align={column.align}
-                style={{ minWidth: column.minWidth }}
+                  className="table__cell__header"
+                  key={column.id}
+                  align={column.align}
+                  style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
                 </TableCell>
@@ -86,16 +81,37 @@ function createData(
           <TableBody>
             {rows.map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.key}>
+                <TableRow className="table__line__body" hover tabIndex={-1} key={row.key}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
-                      <TableCell className="table__body__cell" key={column.id} align={column.align}>
-                        {column.format && typeof value === "number"
-                          ? value > 100
-                          ? "N/A"
-                          : column.format(value)
-                          : value}
+                      <TableCell
+                        className={`table__body__cell ${
+                          value.toString().trim() === "Completo"
+                            ? "status--completed"
+                            : value.toString().trim() === "Em andamento"
+                            ? "status--pending"
+                            : value.toString().trim() === "Upload de Imagens"
+                            ? "status--uploading"
+                            : value.toString().trim() === "Cancelado"
+                            ? "status--canceled"
+                            : null
+                        }`}
+                        key={column.id}
+                        align={column.align}
+                      >
+                        {column.format && typeof value === "number" ? (
+                          value > 100 ? (
+                            "N/A"
+                          ) : (
+                            <CircularProgressWithLabel
+                              variant="determinate"
+                              value={column.format(value)}
+                            />
+                          )
+                        ) : (
+                          value
+                        )}
                       </TableCell>
                     );
                   })}
@@ -105,6 +121,7 @@ function createData(
           </TableBody>
         </Table>
       </TableContainer>
+    </Paper>
   );
 };
 

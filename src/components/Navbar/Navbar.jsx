@@ -5,7 +5,8 @@ import { GoPeople } from "react-icons/go";
 import { MdOutlineDiscount } from "react-icons/md";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { GoPaperclip } from "react-icons/go";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
 
 const Navbar = ({ setExibeNavbar, exibeNavbar }) => {
   return (
@@ -13,26 +14,24 @@ const Navbar = ({ setExibeNavbar, exibeNavbar }) => {
       <span className={exibeNavbar ? "main-background-blur" : ""}></span>
       <aside>
         <nav className={`navbar ${exibeNavbar ? "exibeNavbar" : ""}`}>
-          <span onClick={() => setExibeNavbar(false)} className="navbar__close">
-            x
-          </span>
+          <IoMdClose onClick={() => setExibeNavbar(false)} size={35} color="white" className="navbar__close"/>
           <div className="navbar-flex">
-            <NavLink as={Link} to="/">
+            <NavLink className={"nav-link"}  to="/">
               <RxDashboard size={22} /> Dashboard
             </NavLink>
-            <NavLink to="/equipes">
+            <NavLink className={"nav-link"} to="/equipes">
               <GoPeople size={22} />
               Equipes
             </NavLink>
-            <NavLink to="/galeria">
+            <NavLink className={"nav-link"} to="/galeria">
               <HiOutlinePhotograph size={22} />
               Galeria
             </NavLink>
-            <NavLink to="/descontos">
+            <NavLink className={"nav-link"} to="/descontos">
               <MdOutlineDiscount size={22} />
               Descontos
             </NavLink>
-            <NavLink to="/eventos">
+            <NavLink className={"nav-link"} to="/eventos">
               <GoPaperclip size={22} />
               Eventos
             </NavLink>

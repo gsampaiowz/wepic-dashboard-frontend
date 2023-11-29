@@ -16,7 +16,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,11 +50,62 @@
   flex-direction: column;
   gap: 20px;
   flex: 1;
+  width: inherit;
 }
 
 .card__header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+}
+
+.table-card__dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.circular-chart-card {
+  width: inherit;
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.circular-chart-card-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.circular-chart-card-dados{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.circular-chart-card-dado{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.circular-chart-card-dado__value{
+  font-size: 24px;
+  font-weight: 600;
+}
+.circular-chart-card-dado__title{
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.activities-list-card{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
 }
 
 @media (max-width: 480px) {

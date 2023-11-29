@@ -1,13 +1,40 @@
-.table__header {
+.table__line__body > .css-1ex1afd-MuiTableCell-root:last-of-type {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.table__line__header {
+.table__line__header > .table__cell__header:last-of-type {
+  text-align: right;
 }
 
-.table__cell__header{
-    background: none;
+.table__cell__header {
+  font-family: "Poppins-Regular", "Courier New", Courier, monospace !important;
+  background-color: #f2f2f2 !important;
+  
 }
 
-.table__body__cell{
-    border: none !important;
+.table__body__cell {
+  font-family: "Poppins-Regular", "Courier New", Courier, monospace !important;
+  background-color: #f2f2f2 !important;
+  border: none !important;
+}
+
+.status--completed {
+  background-color: #C9DECB !important;
+  color: #209332 !important;
+}
+
+.status--canceled {
+  color: #ff3030 !important;
+  background-color: #ffc8c7 !important;
+}
+
+.status--pending {
+  background-color: #EFE9CE !important;
+  color: #dfa504 !important;
+}
+
+.status--uploading {
+  background-color: #EED9CB !important;
+  color: #ff451d !important;
 }

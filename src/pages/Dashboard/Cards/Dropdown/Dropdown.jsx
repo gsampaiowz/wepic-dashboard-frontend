@@ -1,12 +1,14 @@
 import { Menu } from "@mui/base/Menu";
-import { MenuItem } from "@mui/base/MenuItem";
-import { MenuButton } from "@mui/base/MenuButton";
 import { Dropdown } from "@mui/base/Dropdown";
+import { MenuButton } from "@mui/base/MenuButton";
+import { MenuItem } from "@mui/base/MenuItem";
+import { FaAngleDown } from "react-icons/fa";
+import "./Dropdown.css";
 
-const MyDropdown = () => {
+const MyDropdown = ({ titulo, array = [] }) => {
   return (
     <Dropdown>
-      <MenuButton className="TriggerButtonSimple">My account</MenuButton>
+      <MenuButton className="TriggerButtonSimple">{titulo} <FaAngleDown size={15} color="#575757"/></MenuButton>
 
       <Menu
         className="CustomMenuSimple"
@@ -14,11 +16,9 @@ const MyDropdown = () => {
           listbox: { className: "CustomMenuSimple--listbox" },
         }}
       >
-        <MenuItem className="CustomMenuSimple--item">Profile</MenuItem>
-        <MenuItem className="CustomMenuSimple--item">
-          Language settings
-        </MenuItem>
-        <MenuItem className="CustomMenuSimple--item">Log out</MenuItem>
+        {array.map((item, index) => (
+              <MenuItem className="CustomMenuIntroduction--item" key={index}>{item}</MenuItem>
+            ))}
       </Menu>
     </Dropdown>
   );

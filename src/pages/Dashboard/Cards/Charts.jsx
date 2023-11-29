@@ -15,7 +15,7 @@ export const MyPieChart = () => {
           <Cell
             key={`cell-${index}`}
             fill={
-              pieChartDatas.pieColors[index % pieChartDatas.pieColors.length]
+              pieChartDatas.pieColors[index]
             }
           />
         ))}
@@ -31,20 +31,22 @@ export const MyPieChart = () => {
   );
 };
 
-export const MyLineChart = () => {
+export const MyLineChart = ({width, height, data, colors = []}) => {
   return (
-    <LineChart width={300} height={100} data={lineChartDatas}>
+    <LineChart width={width} height={height} data={data}>
       <Line
         type="monotone"
         dataKey="pv"
-        stroke="#2D2BD4"
+        stroke={colors[0]}
+        // stroke="#2D2BD4"
         strokeWidth={3}
         dot={null}
       />
       <Line
         type="monotone"
         dataKey="uv"
-        stroke="#00BAD3"
+        stroke={colors[1]}
+        // stroke="#00BAD3"
         strokeWidth={3}
         dot={null}
       />

@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Poppins-Regular','Courier New', Courier, monospace;
+  font-family: 'Poppins-Regular','Courier New', Courier, monospace !important;
 }
 
 :root {
