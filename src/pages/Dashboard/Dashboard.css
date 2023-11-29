@@ -3,7 +3,6 @@
   flex-flow: column wrap;
   gap: 20px;
   align-items: center;
-  margin: 0 20px;
 }
 
 .dashboard-row{

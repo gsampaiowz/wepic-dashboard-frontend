@@ -22,7 +22,6 @@ import { lineChartDatas } from "./Cards/Datas";
 const Dashboard = () => {
   return (
     <MainContent>
-      <div className="dashboard">
         <Container>
           <div className="dashboard-flex">
             <div className="dashboard-row">
@@ -109,7 +108,6 @@ const Dashboard = () => {
             </div>
           </div>
         </Container>
-      </div>
     </MainContent>
   );
 };

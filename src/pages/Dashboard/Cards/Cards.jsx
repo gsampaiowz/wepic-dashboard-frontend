@@ -1,5 +1,5 @@
 import CardTitle from "./CardTitle/CardTitle";
-import MyDropdown from "./Dropdown/Dropdown";
+import MyDropdown from "../../../components/Dropdown/Dropdown";
 import MyTable from "./Table/Table";
 import { Cell, Pie, PieChart } from "recharts";
 import { dataCircularChart, dropdownDatas } from "./Datas";

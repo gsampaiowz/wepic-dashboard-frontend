@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Dashboard from "../pages/Dashboard/Dashboard";
-import Equipes from "../pages/Equipes/Equipes";
+import Equipe from "../pages/Equipe/Equipe";
 import Descontos from "./../pages/Descontos/Descontos";
 import Eventos from "../pages/Eventos/Eventos";
 import Galeria from "../pages/Galeria/Galeria";
@@ -16,7 +16,7 @@ const AppRoutes = () => {
       <Navbar exibeNavbar={exibeNavbar} setExibeNavbar={setExibeNavbar} />
       <Routes>
         <Route element={<Dashboard />} path="/" />
-        <Route element={<Equipes />} path="/equipes" />
+        <Route element={<Equipe />} path="/equipes" />
         <Route element={<Descontos />} path="/descontos" />
         <Route element={<Eventos />} path="/eventos" />
         <Route element={<Galeria />} path="/galeria" />

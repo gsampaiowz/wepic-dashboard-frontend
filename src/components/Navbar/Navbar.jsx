@@ -16,22 +16,22 @@ const Navbar = ({ setExibeNavbar, exibeNavbar }) => {
         <nav className={`navbar ${exibeNavbar ? "exibeNavbar" : ""}`}>
           <IoMdClose onClick={() => setExibeNavbar(false)} size={35} color="white" className="navbar__close"/>
           <div className="navbar-flex">
-            <NavLink className={"nav-link"}  to="/">
+            <NavLink onClick={() => setExibeNavbar(false)} className={"nav-link"} to="/">
               <RxDashboard size={22} /> Dashboard
             </NavLink>
-            <NavLink className={"nav-link"} to="/equipes">
+            <NavLink onClick={() => setExibeNavbar(false)} className={"nav-link"} to="/equipes">
               <GoPeople size={22} />
               Equipes
             </NavLink>
-            <NavLink className={"nav-link"} to="/galeria">
+            <NavLink onClick={() => setExibeNavbar(false)} className={"nav-link"} to="/galeria">
               <HiOutlinePhotograph size={22} />
               Galeria
             </NavLink>
-            <NavLink className={"nav-link"} to="/descontos">
+            <NavLink onClick={() => setExibeNavbar(false)} className={"nav-link"} to="/descontos">
               <MdOutlineDiscount size={22} />
               Descontos
             </NavLink>
-            <NavLink className={"nav-link"} to="/eventos">
+            <NavLink onClick={() => setExibeNavbar(false)} className={"nav-link"} to="/eventos">
               <GoPaperclip size={22} />
               Eventos
             </NavLink>
