@@ -1,4 +1,4 @@
-import { lineChartDatas, pieChartDatas } from "./Datas";
+import { pieChartDatas } from "./DashboardDatas";
 import { PieChart, Pie, LineChart, Line, Cell, Tooltip } from "recharts";
 
 export const MyPieChart = () => {

@@ -1,0 +1,12 @@
+.galeria-flex .TriggerButtonSimple{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    gap: 50px;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.galeria-flex{
+    flex-direction: column;
+    gap: 50px;
+}

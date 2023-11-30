@@ -17,7 +17,7 @@ import "./Dashboard.css";
 import CardTitle from "./Cards/CardTitle/CardTitle";
 import Statistic from "./Cards/Statistic/Statistic";
 import { MyLineChart, MyPieChart } from "./Cards/Charts";
-import { lineChartDatas } from "./Cards/Datas";
+import { lineChartDatas } from "./Cards/DashboardDatas";
 
 const Dashboard = () => {
   return (

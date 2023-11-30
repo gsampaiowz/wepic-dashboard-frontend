@@ -54,12 +54,12 @@ export const pieChartDatas = {
 };
 
 export const dropdownDatas = {
-  events: ["Evento 1", "Evento 2", "Evento 3"],
+  "events" : ["Evento 1", "Evento 2", "Evento 3"],
 
-  fotografos: ["Fotógrafo 1", "Fotógrafo 2", "Fotógrafo 3"],
+  "fotografos" : ["Fotógrafo 1", "Fotógrafo 2", "Fotógrafo 3"],
 
-  status: ["Status 1", "Status 2", "Status 3"],
-};
+  "status" : ["Status 1", "Status 2", "Status 3"],
+}
 
 export const dataCircularChart = [
   {

@@ -9,21 +9,25 @@ const Equipe = () => {
       nome: "Fulano",
       descricao:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl quis ultricies.",
+      image: "https://picsum.photos/200/300",
     },
     {
       nome: "Fulano2",
       descricao:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl quis ultricies.",
+      image: "https://picsum.photos/200/300",
     },
     {
       nome: "Fulano3",
       descricao:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl quis ultricies.",
+      image: "https://picsum.photos/200/300",
     },
     {
       nome: "Fulano4",
       descricao:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis ultricies ultricies, nunc nisl ultricies nunc, quis ultricies nisl nisl quis ultricies.",
+      image: "https://picsum.photos/200/300",
     },
   ];
   return (
@@ -31,7 +35,12 @@ const Equipe = () => {
       <Container>
         <div className="membros-flex">
           {equipe.map((membro) => (
-            <MembroCard key={membro.nome} nome={membro.nome} descricao={membro.descricao} />
+            <MembroCard
+              key={membro.nome}
+              nome={membro.nome}
+              image={membro.image}
+              descricao={membro.descricao}
+            />
           ))}
         </div>
       </Container>

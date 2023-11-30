@@ -2,9 +2,10 @@ import CardTitle from "./CardTitle/CardTitle";
 import MyDropdown from "../../../components/Dropdown/Dropdown";
 import MyTable from "./Table/Table";
 import { Cell, Pie, PieChart } from "recharts";
-import { dataCircularChart, dropdownDatas } from "./Datas";
+import { dataCircularChart, dropdownDatas } from "./DashboardDatas";
 import "./Cards.css";
-import ActivitiesList from './ActivitiesList/ActivitiesList';
+import ActivitiesList from "./ActivitiesList/ActivitiesList";
+import { MenuItem } from "@mui/base/MenuItem";
 
 export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   return (
@@ -38,9 +39,15 @@ export const TableCard = () => {
       <div className="card__header">
         <CardTitle text="Processo de eventos" />
         <div className="table-card__dropdowns">
-          <MyDropdown array={dropdownDatas.events} titulo={"Eventos"} />
-          <MyDropdown array={dropdownDatas.fotografos} titulo={"Fotógrafos"} />
-          <MyDropdown array={dropdownDatas.status} titulo={"Status"} />
+          {Object.entries(dropdownDatas).map(([key, value], index) => (
+            <MyDropdown key={index} iconColor={"#575757"} array={value} titulo={key}>
+              {value.map((option, index) => (
+                <MenuItem className="CustomMenuIntroduction--item" key={index}>
+                  {option}
+                </MenuItem>
+              ))}
+            </MyDropdown>
+          ))}
         </div>
       </div>
       <MyTable />
@@ -82,10 +89,15 @@ export const CircularChartCard = () => {
           </div>
           {dataCircularChart.map((item) => (
             <div key={item.name} className="circular-chart-card-dado">
-              <span style={{color: item.color}} className="circular-chart-card-dado__value">
+              <span
+                style={{ color: item.color }}
+                className="circular-chart-card-dado__value"
+              >
                 {item.value}
               </span>
-              <span className="circular-chart-card-dado__title">{item.name}</span>
+              <span className="circular-chart-card-dado__title">
+                {item.name}
+              </span>
             </div>
           ))}
         </div>
@@ -101,4 +113,4 @@ export const ActivitiesListCard = () => {
       <ActivitiesList />
     </div>
   );
-}
+};

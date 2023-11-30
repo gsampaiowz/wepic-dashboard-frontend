@@ -1,11 +1,11 @@
-import { Skeleton, Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import React from "react";
 import "./MembroCard.css";
 
-const MembroCard = ({ nome, descricao }) => {
+const MembroCard = ({ nome, descricao, image }) => {
   return (
     <article className="membro-card">
-      <Skeleton animation={false} variant="rounded" width={200} height={200} />
+      <img style={{borderRadius: 20, boxShadow: "0px 0px 4px rgba(0,0,0,0.5)"}} src={image} alt="" width={200} height={200} />
       <Tooltip title={descricao} placement="bottom">
         <p className="membro-nome">{nome}</p>
       </Tooltip>

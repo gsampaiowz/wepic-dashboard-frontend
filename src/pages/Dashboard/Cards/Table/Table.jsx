@@ -5,23 +5,23 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { TableContainer, Paper } from "@mui/material";
 import CircularProgressWithLabel from "./CircularProgressWithLabel/CircularProgressWithLabel";
-import { v4 as uuidv4 } from "uuid";
-uuidv4();
 
 import "./Table.css";
 
 const columns = [
-  { id: "nome", label: "Nome", minWidth: 240 },
-  { id: "fotografo", label: "Fotógrafo", minWidth: 120 },
+  { id: "nome", label: "Nome", minWidth: 240, format: (value) => value.toLocaleString("pt-BR") },
+  { id: "fotografo", label: "Fotógrafo", minWidth: 120, format: (value) => value.toLocaleString("pt-BR") },
   {
     id: "data",
     label: "Data",
     minWidth: 100,
+    format: (value) => new Date(value).toLocaleDateString(),
   },
   {
     id: "status",
     label: "Status",
     minWidth: 140,
+    format: (value) => value.toLocaleString("pt-BR"),
   },
   {
     id: "progresso",
@@ -31,7 +31,7 @@ const columns = [
   },
 ];
 
-function createData(nome, fotografo, data, status, progresso, key = uuidv4()) {
+function createData(nome, fotografo, data, status, progresso) {
   return {
     nome,
     fotografo,
@@ -47,16 +47,15 @@ function createData(nome, fotografo, data, status, progresso, key = uuidv4()) {
         ? "Cancelado"
         : null,
     progresso,
-    key,
   };
 }
 
 const rows = [
-  createData("Nome", "Nome", "Data", 1, 100),
-  createData("Nome", "Nome", "Data", 2, 100),
-  createData("Nome", "Nome", "Data", 4, 100),
-  createData("Nome", "Nome", "Data", 1, 100),
-  createData("Nome", "Nome", "Data", 3, 100),
+  createData("Nome", "Nome", "2013-01-01T00:00:00.99999999", 1, 100),
+  createData("Nome", "Nome", "2013-01-01T00:00:00.99999999", 2, 100),
+  createData("Nome", "Nome", "2013-01-01T00:00:00.99999999", 4, 100),
+  createData("Nome", "Nome", "2013-01-01T00:00:00.99999999", 1, 100),
+  createData("Nome", "Nome", "2013-01-01T00:00:00.99999999", 3, 100),
 ];
 
 const MyTable = () => {
@@ -79,9 +78,9 @@ const MyTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => {
+            {rows.map((row,index) => {
               return (
-                <TableRow className="table__line__body" hover tabIndex={-1} key={row.key}>
+                <TableRow className="table__line__body" hover tabIndex={-1} key={index}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
@@ -110,7 +109,7 @@ const MyTable = () => {
                             />
                           )
                         ) : (
-                          value
+                          column.format(value)
                         )}
                       </TableCell>
                     );
