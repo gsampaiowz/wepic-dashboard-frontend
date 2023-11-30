@@ -6,6 +6,7 @@ import { dataCircularChart, dropdownDatas } from "./DashboardDatas";
 import "./Cards.css";
 import ActivitiesList from "./ActivitiesList/ActivitiesList";
 import { MenuItem } from "@mui/base/MenuItem";
+import { useState } from "react";
 
 export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   return (
@@ -34,15 +35,20 @@ export const ChartCard = ({ children }) => {
 };
 
 export const TableCard = () => {
+  const [selecionados, setSelecionados] = useState([
+    dropdownDatas[0].escolhas[0],
+    dropdownDatas[1].escolhas[0],
+    dropdownDatas[2].escolhas[0],
+  ]);
   return (
     <div className="card table-card">
       <div className="card__header">
         <CardTitle text="Processo de eventos" />
         <div className="table-card__dropdowns">
-          {Object.entries(dropdownDatas).map(([key, value], index) => (
-            <MyDropdown key={index} iconColor={"#575757"} array={value} titulo={key}>
-              {value.map((option, index) => (
-                <MenuItem className="CustomMenuIntroduction--item" key={index}>
+          {dropdownDatas.map((dropdown, index) => (
+            <MyDropdown key={index} iconColor={"#575757"} titulo={selecionados[index]}>
+              {dropdown.escolhas.map((option, index) => (
+                <MenuItem onClick={() => setSelecionados(...props, )} className="CustomMenuIntroduction--item" key={index}>
                   {option}
                 </MenuItem>
               ))}

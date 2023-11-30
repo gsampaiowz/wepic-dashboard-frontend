@@ -4,7 +4,7 @@ import MainContent from "../../components/MainContent/MainContent";
 import { eventos } from "./GaleriaDatas";
 import "./Galeria.css";
 import { MenuItem } from "@mui/base";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Galeria = () => {
   const [evento, setEvento] = useState("evento1");

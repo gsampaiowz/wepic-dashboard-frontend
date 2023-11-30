@@ -53,13 +53,17 @@ export const pieChartDatas = {
   pieColors: ["#470CA6", "#5ACB0D", "#B82257"],
 };
 
-export const dropdownDatas = {
-  "events" : ["Evento 1", "Evento 2", "Evento 3"],
-
-  "fotografos" : ["Fotógrafo 1", "Fotógrafo 2", "Fotógrafo 3"],
-
-  "status" : ["Status 1", "Status 2", "Status 3"],
-}
+export const dropdownDatas = [
+  {
+    escolhas: ["Evento", "Evento 1", "Evento 2", "Evento 3", "Evento 4", "Evento 5"]
+  },
+  {
+    escolhas: ["Fotógrafos", "Fotógrafos 1", "Fotógrafos 2", "Fotógrafos 3", "Fotógrafos 4", "Fotógrafos 5"]
+  },
+  {
+    escolhas: ["Status", "Status 1", "Status 2", "Status 3", "Status 4", "Status 5"]
+  }
+]
 
 export const dataCircularChart = [
   {
