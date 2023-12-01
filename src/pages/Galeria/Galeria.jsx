@@ -7,7 +7,8 @@ import { MenuItem } from "@mui/base";
 import { useState } from "react";
 
 const Galeria = () => {
-  const [evento, setEvento] = useState("evento1");
+  const [evento, setEvento] = useState("eventos[0].nome");
+
   return (
     <MainContent>
       <Container>

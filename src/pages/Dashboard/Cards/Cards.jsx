@@ -35,20 +35,36 @@ export const ChartCard = ({ children }) => {
 };
 
 export const TableCard = () => {
-  const [selecionados, setSelecionados] = useState([
-    dropdownDatas[0].escolhas[0],
-    dropdownDatas[1].escolhas[0],
-    dropdownDatas[2].escolhas[0],
-  ]);
+    const [selecionados, setSelecionados] = useState([
+      dropdownDatas[0].escolhas[0],
+      dropdownDatas[1].escolhas[0],
+      dropdownDatas[2].escolhas[0],
+    ]);
+
   return (
     <div className="card table-card">
       <div className="card__header">
         <CardTitle text="Processo de eventos" />
         <div className="table-card__dropdowns">
-          {dropdownDatas.map((dropdown, index) => (
-            <MyDropdown key={index} iconColor={"#575757"} titulo={selecionados[index]}>
-              {dropdown.escolhas.map((option, index) => (
-                <MenuItem onClick={() => setSelecionados(...props, )} className="CustomMenuIntroduction--item" key={index}>
+          {dropdownDatas.map((dropdown, dropdownIndex) => (
+            <MyDropdown
+              key={dropdownIndex}
+              iconColor={"#575757"}
+              titulo={selecionados[dropdownIndex]}
+            >
+              {dropdown.escolhas.map((option, optionIndex) => (
+                <MenuItem
+                  onClick={() =>
+                    setSelecionados((prevState) =>
+                      prevState.map((value, setId) => {
+                        if (setId === dropdownIndex) return option;
+                        return value;
+                      })
+                    )
+                  }
+                  className="CustomMenuIntroduction--item"
+                  key={optionIndex}
+                >
                   {option}
                 </MenuItem>
               ))}

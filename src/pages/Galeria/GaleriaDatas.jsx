@@ -1,4 +1,5 @@
 export const eventos = [
+  {nome: "Selecionar evento"},
   {
     nome: "evento1",
     descricao: "descricao1",
