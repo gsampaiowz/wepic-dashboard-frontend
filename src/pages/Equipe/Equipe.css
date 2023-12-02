@@ -1,7 +1,7 @@
-.membros-flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
+.membros-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
 }

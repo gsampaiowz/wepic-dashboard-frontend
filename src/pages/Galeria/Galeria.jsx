@@ -4,10 +4,37 @@ import MainContent from "../../components/MainContent/MainContent";
 import { eventos } from "./GaleriaDatas";
 import "./Galeria.css";
 import { MenuItem } from "@mui/base";
-import { useState } from "react";
+import { Fragment, useContext, useEffect } from "react";
+import { myContext } from "../../App";
 
 const Galeria = () => {
-  const [evento, setEvento] = useState("eventos[0].nome");
+  const { evento, setEvento } = useContext(myContext);
+
+  useEffect(() => {
+    document.getElementById("galeria-imagens").animate(
+      [
+        { opacity: "0" },
+      ],
+      {
+        duration: 1000,
+        iterations: 1,
+      }
+    );
+    setTimeout(() => {
+
+      setEvento(event);
+    }, 1000);
+    document.getElementById("galeria-imagens").animate(
+      [
+        { opacity: "0" },
+        { opacity: "1"},
+      ],
+      {
+        duration: 1000,
+        iterations: 1,
+      }
+    );
+  }, [evento]);
 
   return (
     <MainContent>
@@ -16,24 +43,35 @@ const Galeria = () => {
           <MyDropdown
             array={eventos}
             iconColor={"var(--color-white)"}
-            titulo={"Selecionar evento"}
+            titulo={evento}
           >
-            {eventos.map((option, index) => (
+            {eventos.map((option, menuIndex) => (
               <MenuItem
+                onMouseEnter={() => setEvento(option.nome)}
                 onClick={() => setEvento(option.nome)}
                 className="CustomMenuIntroduction--item"
-                key={index}
+                key={menuIndex}
               >
                 {option.nome}
               </MenuItem>
             ))}
           </MyDropdown>
-          <div className="galeria-imagens" >
-            {eventos
-              .filter((event) => event.nome === evento).at(0).images
-              .map((image, index) => (
-                <img key={index} src={image} alt="imagem" />
-              ))}
+          <div id="galeria-imagens" className="galeria-imagens">
+            {evento === "Selecionar evento" || evento === "Todos"
+              ? eventos.slice(1).map((event, nameIndex) => (
+                  <Fragment key={nameIndex}>
+                    <p>{event.nome}</p>
+                    {event.images.map((image, imgIndex) => (
+                      <img key={imgIndex} src={image} alt="imagem" />
+                    ))}
+                  </Fragment>
+                ))
+              : eventos
+                  .filter((event) => event.nome === evento)
+                  .at(0)
+                  .images.map((image, imgIndex) => (
+                    <img key={imgIndex} src={image} alt="imagem" />
+                  ))}
           </div>
         </div>
       </Container>

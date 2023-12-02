@@ -5,6 +5,8 @@
   padding: 5px 15px;
   border-radius: 20px;
   display: flex;
+  max-width: 130px;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   cursor: pointer ;
@@ -20,6 +22,7 @@
   border-radius: 10px ;
   overflow-y: scroll;
   cursor: pointer;
+  max-width: 135px;
 }
 
 .CustomMenuSimple--listbox {

@@ -8,8 +8,8 @@ const MyDropdown = ({ titulo, children, iconColor }) => {
   return (
     <Dropdown>
       <MenuButton className="TriggerButtonSimple">
-        {titulo}
-        <FaAngleDown size={15} color={iconColor} />
+        <p style={{whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>{titulo}</p>
+        <FaAngleDown style={{minWidth: 15}} size={15} color={iconColor} />
       </MenuButton>
 
       <Menu

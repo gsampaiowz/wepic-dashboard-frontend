@@ -10,16 +10,15 @@
 }
 
 body {
-  font-family: 'Poppins-Regular','Courier New', Courier, monospace !important;
+  font-family: "Poppins-Regular", "Courier New", Courier, monospace !important;
 }
 
 :root {
   /* Variáveis de tema */
-  
+
   --color-white: #fff;
-  --color-blue: #00BAD3;
-  --color-orange: #FF451D;
+  --color-blue: #00bad3;
+  --color-orange: #ff451d;
   --color-black: #000;
   --color-gray: rgba(0, 0, 0, 0.05);
-
 }

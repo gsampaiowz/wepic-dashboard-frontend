@@ -1,5 +1,5 @@
 export const eventos = [
-  {nome: "Selecionar evento"},
+  { nome: "Todos", images: [] },
   {
     nome: "evento1",
     descricao: "descricao1",
@@ -13,10 +13,10 @@ export const eventos = [
     nome: "evento2",
     descricao: "descricao1",
     images: [
-        "https://picsum.photos/200/300",
-        "https://picsum.photos/200/300",
-        "https://picsum.photos/200/300",
-      ],
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300",
+    ],
   },
   {
     nome: "evento3",

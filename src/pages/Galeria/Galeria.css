@@ -1,14 +1,18 @@
-.galeria-flex .TriggerButtonSimple{
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    justify-content: space-between;
-    padding: 10px 16px;
-    border-radius: 8px;
-    max-width: 250px;
+.galeria-flex .TriggerButtonSimple {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-radius: 8px;
+  max-width: 250px;
 }
 
-.galeria-flex{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+.galeria-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.galeria-imagens{
+    transition: 1s;
 }

@@ -7,6 +7,7 @@ import "./Cards.css";
 import ActivitiesList from "./ActivitiesList/ActivitiesList";
 import { MenuItem } from "@mui/base/MenuItem";
 import { useState } from "react";
+import { Tooltip } from "@mui/material";
 
 export const PriceCard = ({ icon, price, iconBackgroundColor }) => {
   return (
@@ -35,11 +36,11 @@ export const ChartCard = ({ children }) => {
 };
 
 export const TableCard = () => {
-    const [selecionados, setSelecionados] = useState([
-      dropdownDatas[0].escolhas[0],
-      dropdownDatas[1].escolhas[0],
-      dropdownDatas[2].escolhas[0],
-    ]);
+  const [selecionados, setSelecionados] = useState([
+    dropdownDatas[0].escolhas[0],
+    dropdownDatas[1].escolhas[0],
+    dropdownDatas[2].escolhas[0],
+  ]);
 
   return (
     <div className="card table-card">
@@ -53,20 +54,22 @@ export const TableCard = () => {
               titulo={selecionados[dropdownIndex]}
             >
               {dropdown.escolhas.map((option, optionIndex) => (
-                <MenuItem
-                  onClick={() =>
-                    setSelecionados((prevState) =>
-                      prevState.map((value, setId) => {
-                        if (setId === dropdownIndex) return option;
-                        return value;
-                      })
-                    )
-                  }
-                  className="CustomMenuIntroduction--item"
-                  key={optionIndex}
-                >
-                  {option}
-                </MenuItem>
+                <Tooltip title={option} key={optionIndex}>
+                  <MenuItem
+                  style={{whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}
+                    onClick={() =>
+                      setSelecionados((prevState) =>
+                        prevState.map((value, setId) => {
+                          if (setId === dropdownIndex) return option;
+                          return value;
+                        })
+                      )
+                    }
+                    className="CustomMenuIntroduction--item"
+                  >
+                    {option}
+                  </MenuItem>
+                </Tooltip>
               ))}
             </MyDropdown>
           ))}
