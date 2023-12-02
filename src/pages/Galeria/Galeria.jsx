@@ -22,7 +22,6 @@ const Galeria = () => {
     );
     setTimeout(() => {
 
-      setEvento(event);
     }, 1000);
     document.getElementById("galeria-imagens").animate(
       [
@@ -47,7 +46,6 @@ const Galeria = () => {
           >
             {eventos.map((option, menuIndex) => (
               <MenuItem
-                onMouseEnter={() => setEvento(option.nome)}
                 onClick={() => setEvento(option.nome)}
                 className="CustomMenuIntroduction--item"
                 key={menuIndex}
