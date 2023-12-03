@@ -11,18 +11,15 @@ const Galeria = () => {
   const { evento, setEvento } = useContext(myContext);
 
   useEffect(() => {
-    document.getElementById("galeria-imagens").animate(
-      [
-        { opacity: "0" },
-      ],
-      {
-        duration: 1000,
-        iterations: 1,
-      }
-    );
-    setTimeout(() => {
-
-    }, 1000);
+    // document.getElementById("galeria-imagens").animate(
+    //   [
+    //     { opacity: "0" },
+    //   ],
+    //   {
+    //     duration: 1000,
+    //     iterations: 1,
+    //   }
+    // );
     document.getElementById("galeria-imagens").animate(
       [
         { opacity: "0" },
