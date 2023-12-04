@@ -1,5 +1,5 @@
 export const eventos = [
-  { nome: "Todos", images: [] },
+  { nome: "Todos" },
   {
     nome: "evento1",
     descricao: "descricao1",

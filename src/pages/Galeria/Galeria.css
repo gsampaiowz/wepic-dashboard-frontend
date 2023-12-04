@@ -3,9 +3,21 @@
   color: var(--color-white);
   justify-content: space-between;
   padding: 10px 16px;
+  width: 100%;
   border-radius: 8px;
-  max-width: 250px;
+  max-width: 300px;
 }
+
+ .dropdown-menu-galeria {
+  background-color: #fff;
+  height: 150px;
+  border-radius: 10px ;
+  overflow-y: scroll;
+  cursor: pointer;
+  max-width: 300px;
+  width: 100%;
+}
+
 
 .galeria-flex {
   display: flex;

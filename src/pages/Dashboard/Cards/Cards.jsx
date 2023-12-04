@@ -54,9 +54,13 @@ export const TableCard = () => {
               titulo={selecionados[dropdownIndex]}
             >
               {dropdown.escolhas.map((option, optionIndex) => (
-                <Tooltip title={option} key={optionIndex}>
+                <Tooltip placement="left" title={option} key={optionIndex}>
                   <MenuItem
-                  style={{whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}
+                    style={{
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
                     onClick={() =>
                       setSelecionados((prevState) =>
                         prevState.map((value, setId) => {

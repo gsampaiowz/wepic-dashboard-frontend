@@ -7,34 +7,34 @@
   text-align: right;
 }
 
-.table__cell__header {
-  font-family: "Poppins-Regular", "Courier New", Courier, monospace !important;
-  background-color: #f2f2f2 !important;
+.table__line__header .table__cell__header {
+  font-family: "Poppins-Regular", "Courier New", Courier, monospace ;
+  background-color: #f2f2f2 ;
   
 }
 
-.table__body__cell {
-  font-family: "Poppins-Regular", "Courier New", Courier, monospace !important;
-  background-color: #f2f2f2 !important;
-  border: none !important;
+.table__line__body .table__body__cell {
+  font-family: "Poppins-Regular", "Courier New", Courier, monospace;
+  background-color: #f2f2f2;
+  border: none;
 }
 
-.status--completed {
-  background-color: #C9DECB !important;
-  color: #209332 !important;
+.table__line__body .status--completed {
+  background-color: #C9DECB ;
+  color: #209332 ;
 }
 
-.status--canceled {
-  color: #ff3030 !important;
-  background-color: #ffc8c7 !important;
+.table__line__body .status--canceled {
+  color: #ff3030 ;
+  background-color: #ffc8c7 ;
 }
 
-.status--pending {
-  background-color: #EFE9CE !important;
-  color: #dfa504 !important;
+.table__line__body .status--pending {
+  background-color: #EFE9CE ;
+  color: #dfa504 ;
 }
 
-.status--uploading {
-  background-color: #EED9CB !important;
-  color: #ff451d !important;
+.table__line__body .status--uploading {
+  background-color: #EED9CB ;
+  color: #ff451d ;
 }
