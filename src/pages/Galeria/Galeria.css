@@ -8,16 +8,15 @@
   max-width: 300px;
 }
 
- .dropdown-menu-galeria {
+.dropdown-menu-galeria {
   background-color: #fff;
   height: 150px;
-  border-radius: 10px ;
+  border-radius: 10px;
   overflow-y: scroll;
   cursor: pointer;
   max-width: 300px;
   width: 100%;
 }
-
 
 .galeria-flex {
   display: flex;
@@ -25,6 +24,26 @@
   gap: 50px;
 }
 
-.galeria-imagens{
-    transition: 1s;
+.galeria-imagens {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.galeria-titulo-evento {
+  width: min-content;
+}
+
+.evento-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.evento-images-flex {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
