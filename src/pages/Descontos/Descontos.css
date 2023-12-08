@@ -1,13 +1,15 @@
-.cards-descontos{
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+.cards-descontos {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.descontos-flex{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+.descontos-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }

@@ -1,7 +1,7 @@
 .card-desconto {
   height: 450px;
   display: flex;
-  width: 350px;
+  width: 300px;
   flex-direction: column;
   gap: 30px;
   align-items: center;

@@ -15,19 +15,19 @@ const Descontos = () => {
             <CardDesconto
               porcentagem={70}
               descricao={
-                "TESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTE"
+                "Desconto imperdível para fotos de casamento, aproveite!"
               }
             />
             <CardDesconto
               porcentagem={70}
               descricao={
-                "TESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTE"
+                "Desconto imperdível para fotos de festas de aniversário, aproveite!"
               }
             />
             <CardDesconto
               porcentagem={70}
               descricao={
-                "TESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTE"
+                "Desconto imperdível para fotos de shows, aproveite!"
               }
             />
           </div>
