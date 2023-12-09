@@ -1,0 +1,38 @@
+.eventos-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.evento-card {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  padding-bottom: 40px;
+  overflow: hidden;
+}
+
+.eventos-nome-evento{
+    font-size: 20px;
+    padding: 5px 20px;
+    background: var(--color-white);
+    border-radius: 20px;
+    color: var(--color-orange);
+    z-index: 1;       
+}
+
+.background-blue-blur{
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background-color: rgba(0, 186, 211, 0.25);
+    position: absolute;
+}
