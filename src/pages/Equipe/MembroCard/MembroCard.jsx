@@ -2,9 +2,9 @@ import { Tooltip } from "@mui/material";
 import React from "react";
 import "./MembroCard.css";
 
-const MembroCard = ({ nome, descricao, image }) => {
+const MembroCard = ({ nome, descricao, image, onClick }) => {
   return (
-    <Tooltip title={descricao} placement="bottom">
+    <Tooltip onClick={onClick} title={descricao} placement="bottom">
       <article className="membro-card">
         <img
           style={{ borderRadius: 20, boxShadow: "0px 0px 4px rgba(0,0,0,0.5)" }}

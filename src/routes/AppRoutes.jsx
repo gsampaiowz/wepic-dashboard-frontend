@@ -7,6 +7,7 @@ import Eventos from "../pages/Eventos/Eventos";
 import Galeria from "../pages/Galeria/Galeria";
 import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
+import DetalhesMembro from "../pages/Equipe/DetalhesMembro/DetalhesMembro";
 
 const AppRoutes = () => {
   const [exibeNavbar, setExibeNavbar] = useState(false);
@@ -20,6 +21,7 @@ const AppRoutes = () => {
         <Route element={<Descontos />} path="/descontos" />
         <Route element={<Eventos />} path="/eventos" />
         <Route element={<Galeria />} path="/galeria" />
+        <Route element={<DetalhesMembro />} path="/detalhes-membro/" />
       </Routes>
     </BrowserRouter>
   );
