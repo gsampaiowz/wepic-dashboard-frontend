@@ -3,7 +3,7 @@ import MyDropdown from "../../components/Dropdown/Dropdown";
 import MainContent from "../../components/MainContent/MainContent";
 import { eventos } from "./GaleriaDatas";
 import { MenuItem } from "@mui/base";
-import { Fragment, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { myContext } from "../../App";
 import "./Galeria.css";
 import { Tooltip } from "@mui/material";

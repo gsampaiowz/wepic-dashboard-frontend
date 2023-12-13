@@ -1,0 +1,52 @@
+.membro-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.membro-info-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.voltar-equipe {
+  padding: 5px 20px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.membro-descricao {
+  width: 100%;
+}
+
+.membro-dados {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.membro-dado {
+  padding: 20px 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.membro-dado--tiradas {
+}
+
+.membro-dado--vendidas {
+}
+
+.membro-dado--rostos-apurados {
+}
+
+.membro-dado--eventos-participados {
+}

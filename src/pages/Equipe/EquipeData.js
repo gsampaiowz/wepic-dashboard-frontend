@@ -6,6 +6,8 @@ const equipe = [
     image: "https://picsum.photos/200/300",
     fotosTiradas: 5,
     fotosVendidas: 2,
+    rostosApurados: 3,
+    eventosParticipados: 2
   },
   {
     nome: "Fulano2",
@@ -14,6 +16,8 @@ const equipe = [
     image: "https://picsum.photos/200/300",
     fotosTiradas: 5,
     fotosVendidas: 2,
+    rostosApurados: 3,
+    eventosParticipados: 2
   },
   {
     nome: "Fulano3",
@@ -22,6 +26,8 @@ const equipe = [
     image: "https://picsum.photos/200/300",
     fotosTiradas: 5,
     fotosVendidas: 2,
+    rostosApurados: 3,
+    eventosParticipados: 2
   },
   {
     nome: "Fulano4",
@@ -30,6 +36,8 @@ const equipe = [
     image: "https://picsum.photos/200/300",
     fotosTiradas: 5,
     fotosVendidas: 2,
+    rostosApurados: 3,
+    eventosParticipados: 2
   },
 ];
 
