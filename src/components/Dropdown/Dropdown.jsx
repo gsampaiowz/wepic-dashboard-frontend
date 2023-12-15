@@ -10,6 +10,7 @@ const MyDropdown = ({
   iconColor,
   buttonClass = "TriggerButtonSimple",
   menuClass = "CustomMenuSimple",
+  downArrow = true,
 }) => {
   return (
     <Dropdown>
@@ -23,7 +24,7 @@ const MyDropdown = ({
         >
           {titulo}
         </p>
-        <FaAngleDown style={{ minWidth: 15 }} size={15} color={iconColor} />
+        {downArrow ? <FaAngleDown style={{ minWidth: 15 }} size={15} color={iconColor} /> : null}
       </MenuButton>
 
       <Menu

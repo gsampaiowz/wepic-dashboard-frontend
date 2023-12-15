@@ -30,6 +30,34 @@
   cursor: pointer;
 }
 
+.header .TriggerButtonSimple{
+  width: auto;
+  color: var(--color-orange);
+}
+
+.menu-notification-dropdown{
+  width: 100%;
+  max-width: 350px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  text-align: center;
+  z-index: 100;
+}
+
+.CustomMenuSimple{
+  width: 100%;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-top: 10px;
+  text-align: center;
+  z-index: 100;
+}
+
 @media screen and (min-width: 768px) {
   .header__menu__mobile {
     display: none;

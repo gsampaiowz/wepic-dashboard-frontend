@@ -21,7 +21,7 @@ const AppRoutes = () => {
         <Route element={<Descontos />} path="/descontos" />
         <Route element={<Eventos />} path="/eventos" />
         <Route element={<Galeria />} path="/galeria" />
-        <Route element={<DetalhesMembro />} path="/detalhes-membro/:index" />
+        <Route element={<DetalhesMembro />} path="/detalhes-membro/:membro" />
       </Routes>
     </BrowserRouter>
   );

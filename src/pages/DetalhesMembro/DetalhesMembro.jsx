@@ -3,13 +3,12 @@ import "./DetalhesMembro.css";
 import equipe from "../Equipe/EquipeData";
 import MainContent from "../../components/MainContent/MainContent";
 import Container from "../../components/Container/Container";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const DetalhesMembro = () => {
   const navigate = useNavigate();
 
-  const membro =
-    window.location.href.split("/")[window.location.href.split("/").length - 1];
+  const { membro } = useParams();
 
   return (
     <MainContent>
@@ -27,33 +26,42 @@ const DetalhesMembro = () => {
                 <p className="membro-descricao">{_membro.descricao}</p>
                 <div className="membro-dados">
                   <div className="membro-row">
-                    <div className="membro-dado membro-dado--tiradas">
-                      <p>Fotos tiradas:</p>
-                      <p className="membro-dado-numero membro-dado-numero-tiradas">
+                    <div className="membro-dado">
+                      <p>Fotos cadastradas:</p>
+                      <b
+                        style={{ color: "rgb(209, 154, 232)" }}
+                        className="membro-dado-numero"
+                      >
                         {_membro.fotosTiradas}
-                      </p>
+                      </b>
                     </div>
 
-                    <div className="membro-dado membro-dado--vendidas">
+                    <div className="membro-dado">
                       <p>Fotos vendidas:</p>
-                      <p className="membro-dado-numero membro-dado-numero-vendidas">
+                      <b
+                        style={{ color: "rgb(234, 145, 113)" }}
+                        className="membro-dado-numero"
+                      >
                         {_membro.fotosVendidas}
-                      </p>
+                      </b>
                     </div>
                   </div>
                   <div className="membro-row">
-                    <div className="membro-dado membro-dado--rostos-apurados">
+                    <div className="membro-dado">
                       <p>Rostos apurados:</p>
-                      <p className="membro-dado-numero membro-dado-numero-rostos">
+                      <b
+                        style={{ color: "rgb(110, 161, 231)" }}
+                        className="membro-dado-numero"
+                      >
                         {_membro.rostosApurados}
-                      </p>
+                      </b>
                     </div>
 
-                    <div className="membro-dado membro-dado--eventos-participados">
+                    <div className="membro-dado">
                       <p>Eventos participados:</p>
-                      <p className="membro-dado-numero membro-dado-numero-eventos">
+                      <b style={{color: "rgb(239, 195, 117)"}} className="membro-dado-numero">
                         {_membro.eventosParticipados}
-                      </p>
+                      </b>
                     </div>
                   </div>
                 </div>
